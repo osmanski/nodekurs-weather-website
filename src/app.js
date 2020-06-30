@@ -64,18 +64,18 @@ app.get('/weather', (req, res) =>{  //co ma się stać gdy ktos wejdzie na stron
             return console.log('blad')
         }
         //console.log('la: ' + latitude + ' lo: ' + longitude + ' loc: '+ location)
-             forecast(latitude, longitude, (error, {temp, prec}) => {
+             forecast(latitude, longitude, (error, {temp, feelslike, prec}) => {
                 res.send(
                     {
                         jajko: 'jajko',
-                        forecast: 'Temperature: ' + temp + '. Prec: ' +prec ,
+                        forecast: 'Temperature: ' + temp + '. Temperatura odczuwalna: '+ feelslike+'. Prec: ' +prec ,
                         location: location,
                         address: req.query.adress
             
                     }
                         
                 )
-                console.log('Lokalizacja: ' + location + '. Temperatura: ' + temp + '. Szansa opadow: ' + prec)
+                console.log('Lokalizacja: ' + location + '. Temperatura: ' + temp + '. Temperatura odczuwalna: '+ feelslike+'Szansa opadow: ' + prec + '.')
              })
         
         

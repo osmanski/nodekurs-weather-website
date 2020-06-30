@@ -10,6 +10,7 @@ const forecast = (longitude, latitude, callback) =>{
         }else{
             callback(undefined, {
                 temp: response.body.current.temperature,
+                feelslike: response.body.current.feelslike,
                 prec: response.body.current.precip
             })
         }
