@@ -5,7 +5,11 @@ const express = require('express')
 const { resolveSoa } = require('dns')
 const hbs = require('hbs')
 
+console.log('git test')
+
 const app = express()
+
+const port = process.env.PORT || 3000
 
 //define paths for Express conf
 const publicDirectoryPath = path.join(__dirname,'../public') 
@@ -112,6 +116,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000, ()=> {
-    console.log('server odpalony')
+app.listen(port, ()=> {
+    console.log('server odpalony na porcie ' + port)
 })
